@@ -9,13 +9,7 @@
  */
 package org.openmrs.module.ohrireports;
 
-import org.springframework.stereotype.Component;
-
-/**
- * Contains module's config.
- */
-@Component("ohrireports.OHRIReportsConfig")
-public class OHRIReportsConfig {
+public class OHRIReportsConstants {
 	
 	/**
 	 * Encounter types
@@ -49,6 +43,10 @@ public class OHRIReportsConfig {
 	
 	public final static String TODAYZ_APPOINTMENTS = "ccbcf6d8-77b7-44a5-bb43-d352478ea4e9";
 	
+	public final static String CLIENTS_WITHOUT_COVID_19_OUTCOMES = "db6c4a18-28c6-423c-9da0-58d19e364a7f";
+	
+	public final static String COVID_CLIENTS_WITH_PENDING_LAB_RESULTS = "166aa2b1-ce55-4d16-9643-ca9d2e2694ea";
+	
 	/**
 	 * Associated Concepts
 	 */
@@ -63,5 +61,7 @@ public class OHRIReportsConfig {
 	public final static String FINAL_COVID19_TEST_RESULT = "5da5c21b-969f-41bd-9091-e40d4c707544";
 	
 	public final static String RETURN_VISIT_DATE = "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	
+	public final static String POSITIVE = "6378487b-584d-4422-a6a6-56c8830873ff";
 	
 }

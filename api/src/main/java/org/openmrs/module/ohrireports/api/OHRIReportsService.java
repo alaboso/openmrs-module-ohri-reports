@@ -12,7 +12,6 @@ package org.openmrs.module.ohrireports.api;
 import org.openmrs.annotation.Authorized;
 import org.openmrs.api.APIException;
 import org.openmrs.api.OpenmrsService;
-import org.openmrs.module.ohrireports.OHRIReportsConfig;
 import org.openmrs.module.ohrireports.Item;
 import org.springframework.transaction.annotation.Transactional;
 

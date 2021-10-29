@@ -1,16 +1,17 @@
 package org.openmrs.module.ohrireports.cohorts.covid;
 
 import org.openmrs.api.context.Context;
-import org.openmrs.module.ohrireports.cohorts.manager.CohortDefinitionManager;
+import org.openmrs.module.ohrireports.cohorts.manager.BaseCohortDefinitionManager;
+import org.openmrs.module.reporting.cohort.definition.BaseObsCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CodedObsCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.common.MessageUtil;
 import org.springframework.stereotype.Component;
 
-import static org.openmrs.module.ohrireports.OHRIReportsConfig.*;
+import static org.openmrs.module.ohrireports.OHRIReportsConstants.*;
 
 @Component
-public class ClientsWithCOVIDOutcomes implements CohortDefinitionManager {
+public class ClientsWithCOVIDOutcomes extends BaseCohortDefinitionManager {
 	
 	@Override
 	public String getUuid() {
@@ -28,23 +29,21 @@ public class ClientsWithCOVIDOutcomes implements CohortDefinitionManager {
 	}
 	
 	@Override
-	public Boolean isActivated() {
-		return true;
-	}
-	
-	@Override
 	public CohortDefinition constructCohortDefinition() {
-		CodedObsCohortDefinition cd = new CodedObsCohortDefinition();
-		cd.setUuid(getUuid());
-		cd.setName(getName());
-		cd.setDescription(getDescription());
+		CodedObsCohortDefinition cd = (CodedObsCohortDefinition) super.constructCohortDefinition();
 		cd.addEncounterType(Context.getEncounterService().getEncounterTypeByUuid(COVID_ASSESSMENT_ENCOUNTER_TYPE));
 		cd.setQuestion(Context.getConceptService().getConceptByUuid(COVID_TREATMENT_OUTCOME));
+		cd.setTimeModifier(BaseObsCohortDefinition.TimeModifier.LAST);
 		return cd;
 	}
 	
 	@Override
 	public String getVersion() {
 		return "0.1";
+	}
+	
+	@Override
+	public CohortDefinition newInstance() {
+		return new CodedObsCohortDefinition();
 	}
 }
