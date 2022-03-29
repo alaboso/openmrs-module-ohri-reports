@@ -99,6 +99,8 @@ public class Covid19Report implements ReportManager {
 		edsd.addColumn("Sex", pdl.getGender(), "");
 		edsd.addColumn("Encounter ID", new EncounterIdDataDefinition(), "");
 		edsd.addColumn("Assessment Date", edl.getObsValue(COVID19_ASSESSMENT_DATE), "", new ObsValueConverter());
+		edsd.addColumn("Assessment Reasons", edl.getObsValues(COVID19_ASSESSMENT_REASON), "",
+		    odc.getObsValuesCodedPipeDelimitedConverter());
 		addColumnAsTrueOrFalse(edsd, "Assessment Contact Case", COVID19_ASSESSMENT_REASON, COVID19_ASSESSMENT_CONTACT_CASE);
 		addColumnAsTrueOrFalse(edsd, "Assessment Entry Country", COVID19_ASSESSMENT_REASON, COVID19_ASSESSMENT_ENTRY_COUNTRY);
 		addColumnAsTrueOrFalse(edsd, "Assessment Follow Up", COVID19_ASSESSMENT_REASON, COVID19_ASSESSMENT_FOLLOW_UP);
@@ -118,6 +120,8 @@ public class Covid19Report implements ReportManager {
 		edsd.addColumn("Assessment Presentation", edl.getObsValue(COVID19_ASSESSMENT_PRESENTATION), "",
 		    new ObsValueConverter());
 		edsd.addColumn("Date Onset Symptoms", edl.getObsValue(COVID19_DATE_ONSET_SYMPTOMS), "", new ObsValueConverter());
+		edsd.addColumn("Presenting Symptoms", edl.getObsValues(COVID19_PRESENTING_SYMPTOMS), "",
+		    odc.getObsValuesCodedPipeDelimitedConverter());
 		addColumnAsTrueOrFalse(edsd, "Symptom Abdominal Pain", COVID19_PRESENTING_SYMPTOMS, COVID19_SYMPTOM_ABDOMINAL_PAIN);
 		addColumnAsTrueOrFalse(edsd, "Symptom Chest Pain", COVID19_PRESENTING_SYMPTOMS, COVID19_SYMPTOM_CHEST_PAIN);
 		addColumnAsTrueOrFalse(edsd, "Symptom Cough", COVID19_PRESENTING_SYMPTOMS, COVID19_SYMPTOM_COUGH);
@@ -144,6 +148,8 @@ public class Covid19Report implements ReportManager {
 		addColumnAsTrueOrFalse(edsd, "Symptom Tiredness", COVID19_PRESENTING_SYMPTOMS, COVID19_SYMPTOM_TIREDNESS);
 		addColumnAsTrueOrFalse(edsd, "Symptom Other", COVID19_PRESENTING_SYMPTOMS, COVID19_SYMPTOM_OTHER);
 		edsd.addColumn("Comorbidity Present", edl.getObsValue(COVID19_COMORBIDITY_PRESENT), "", new ObsValueConverter());
+		edsd.addColumn("Comorbidity Conditions", edl.getObsValues(COVID19_COMORBIDITY_CONDITION), "",
+		    odc.getObsValuesCodedPipeDelimitedConverter());
 		addColumnAsTrueOrFalse(edsd, "Comorbidity Cardiovascular", COVID19_COMORBIDITY_CONDITION,
 		    COVID19_COMORBIDITY_CARDIOVASCULAR);
 		addColumnAsTrueOrFalse(edsd, "Comorbidity Chronic Lung", COVID19_COMORBIDITY_CONDITION,

@@ -19,4 +19,8 @@ public class OHRIDataConverter {
 	public DataConverter getObsValueCodedExistsConverter() {
 		return new ExistenceConverter("Yes", null);
 	}
+	
+	public DataConverter getObsValuesCodedPipeDelimitedConverter() {
+		return new ObsListAsPipeDelimitedConverter();
+	}
 }

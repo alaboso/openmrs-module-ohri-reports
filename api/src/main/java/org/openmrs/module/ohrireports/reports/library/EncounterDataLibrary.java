@@ -11,7 +11,6 @@ package org.openmrs.module.ohrireports.reports.library;
 
 import org.openmrs.Concept;
 import org.openmrs.api.ConceptService;
-import org.openmrs.module.reporting.data.DataDefinition;
 import org.openmrs.module.reporting.data.encounter.definition.EncounterDataDefinition;
 import org.openmrs.module.reporting.data.encounter.definition.ObsForEncounterDataDefinition;
 import org.openmrs.module.reporting.definition.library.BaseDefinitionLibrary;
@@ -49,6 +48,13 @@ public class EncounterDataLibrary extends BaseDefinitionLibrary<EncounterDataDef
 		Concept answer = conceptService.getConceptByUuid(answerUuid);
 		ofedd.setAnswers(Collections.singletonList(answer));
 		ofedd.setSingleObs(true);
+		return ofedd;
+	}
+	
+	public ObsForEncounterDataDefinition getObsValues(String conceptUuid) {
+		ObsForEncounterDataDefinition ofedd = new ObsForEncounterDataDefinition();
+		ofedd.setQuestion(conceptService.getConceptByUuid(conceptUuid));
+		ofedd.setSingleObs(false);
 		return ofedd;
 	}
 }
