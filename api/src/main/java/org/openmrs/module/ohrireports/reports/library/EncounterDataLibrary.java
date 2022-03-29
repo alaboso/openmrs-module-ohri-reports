@@ -11,7 +11,6 @@ package org.openmrs.module.ohrireports.reports.library;
 
 import org.openmrs.Concept;
 import org.openmrs.api.ConceptService;
-import org.openmrs.module.reporting.data.DataDefinition;
 import org.openmrs.module.reporting.data.encounter.definition.EncounterDataDefinition;
 import org.openmrs.module.reporting.data.encounter.definition.ObsForEncounterDataDefinition;
 import org.openmrs.module.reporting.definition.library.BaseDefinitionLibrary;
