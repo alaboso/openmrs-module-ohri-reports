@@ -9,8 +9,7 @@
  */
 package org.openmrs.module.ohrireports.reports.converter;
 
-import org.openmrs.module.reporting.data.converter.DataConverter;
-import org.openmrs.module.reporting.data.converter.ExistenceConverter;
+import org.openmrs.module.reporting.data.converter.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,5 +17,9 @@ public class OHRIDataConverter {
 	
 	public DataConverter getObsValueCodedExistsConverter() {
 		return new ExistenceConverter("Yes", null);
+	}
+	
+	public DataConverter getObsValuesCodedPipeDelimitedConverter() {
+		return new ObsListAsPipeDelimitedConverter();
 	}
 }

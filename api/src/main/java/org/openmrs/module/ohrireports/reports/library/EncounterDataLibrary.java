@@ -51,4 +51,11 @@ public class EncounterDataLibrary extends BaseDefinitionLibrary<EncounterDataDef
 		ofedd.setSingleObs(true);
 		return ofedd;
 	}
+	
+	public ObsForEncounterDataDefinition getObsValues(String conceptUuid) {
+		ObsForEncounterDataDefinition ofedd = new ObsForEncounterDataDefinition();
+		ofedd.setQuestion(conceptService.getConceptByUuid(conceptUuid));
+		ofedd.setSingleObs(false);
+		return ofedd;
+	}
 }
