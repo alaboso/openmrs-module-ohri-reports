@@ -9,15 +9,19 @@
  */
 package org.openmrs.module.ohrireports.reports.library;
 
+import org.openmrs.Concept;
 import org.openmrs.api.ConceptService;
+import org.openmrs.module.reporting.data.DataDefinition;
 import org.openmrs.module.reporting.data.encounter.definition.EncounterDataDefinition;
 import org.openmrs.module.reporting.data.encounter.definition.ObsForEncounterDataDefinition;
 import org.openmrs.module.reporting.definition.library.BaseDefinitionLibrary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+
 @Component
-public class HtsEncounterDataLibrary extends BaseDefinitionLibrary<EncounterDataDefinition> {
+public class EncounterDataLibrary extends BaseDefinitionLibrary<EncounterDataDefinition> {
 	
 	@Autowired
 	ConceptService conceptService;
@@ -35,6 +39,15 @@ public class HtsEncounterDataLibrary extends BaseDefinitionLibrary<EncounterData
 	public ObsForEncounterDataDefinition getObsValue(String conceptUuid) {
 		ObsForEncounterDataDefinition ofedd = new ObsForEncounterDataDefinition();
 		ofedd.setQuestion(conceptService.getConceptByUuid(conceptUuid));
+		ofedd.setSingleObs(true);
+		return ofedd;
+	}
+	
+	public ObsForEncounterDataDefinition getObsValue(String conceptUuid, String answerUuid) {
+		ObsForEncounterDataDefinition ofedd = new ObsForEncounterDataDefinition();
+		ofedd.setQuestion(conceptService.getConceptByUuid(conceptUuid));
+		Concept answer = conceptService.getConceptByUuid(answerUuid);
+		ofedd.setAnswers(Collections.singletonList(answer));
 		ofedd.setSingleObs(true);
 		return ofedd;
 	}

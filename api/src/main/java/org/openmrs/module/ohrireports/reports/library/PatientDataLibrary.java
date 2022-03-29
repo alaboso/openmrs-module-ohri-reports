@@ -18,7 +18,7 @@ import org.openmrs.module.reporting.definition.library.BaseDefinitionLibrary;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HtsPatientDataLibrary extends BaseDefinitionLibrary<PatientDataDefinition> {
+public class PatientDataLibrary extends BaseDefinitionLibrary<PatientDataDefinition> {
 	
 	@Override
 	public Class<? super PatientDataDefinition> getDefinitionType() {
