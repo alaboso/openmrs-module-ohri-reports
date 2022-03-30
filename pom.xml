@@ -108,6 +108,13 @@
 				<artifactId>maven-artifact</artifactId>
 				<version>3.0.3</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>cohort-api</artifactId>
+				<version>${cohortVersion}</version>
+				<scope>provided</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -128,5 +135,6 @@
     <properties>
         <openmrsPlatformVersion>2.1.1</openmrsPlatformVersion>
 		<reportingVersion>1.19.0</reportingVersion>
+		<cohortVersion>3.0.0-SNAPSHOT</cohortVersion>
 	</properties>
 </project>
