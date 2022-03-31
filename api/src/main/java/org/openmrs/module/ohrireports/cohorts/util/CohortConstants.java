@@ -10,22 +10,22 @@
 package org.openmrs.module.ohrireports.cohorts.util;
 
 public class CohortConstants {
-
-    public static final String HTS_COHORT_TYPE_UUID = "232bceb2-e2fb-11eb-8212-7d7156e00a1f";
-
-    public static final String HTS_COHORT_TYPE_NAME = "HTS";
-
-    public static final String HTS_COHORT_TYPE_DESCRIPTION = "HTS Patients List";
-
-    public static final String HTS_PRE_TEST_COHORT_UUID = "e4d801f0-e2fd-11eb-8212-7d7156e00a1f";
-
-    public static final String HTS_PRE_TEST_COHORT_NAME = "Pre-Test Counselling";
-
-    public static final String HTS_WAITING_FOR_TEST_COHORT_UUID = "cdee0abe-e471-11eb-8212-7d7156e00a1f";
-
-    public static final String HTS_WAITING_FOR_TEST_COHORT_NAME = "Waiting For Test";
-
-    public static final String HTS_POST_TEST_COHORT_UUID = "01af2130-e472-11eb-8212-7d7156e00a1f";
-
-    public static final String HTS_POST_TEST_COHORT_NAME = "Post-Test Counselling";
+	
+	public static final String HTS_COHORT_TYPE_UUID = "232bceb2-e2fb-11eb-8212-7d7156e00a1f";
+	
+	public static final String HTS_COHORT_TYPE_NAME = "HTS";
+	
+	public static final String HTS_COHORT_TYPE_DESCRIPTION = "HTS Patients List";
+	
+	public static final String HTS_PRE_TEST_COHORT_UUID = "e4d801f0-e2fd-11eb-8212-7d7156e00a1f";
+	
+	public static final String HTS_PRE_TEST_COHORT_NAME = "Pre-Test Counselling";
+	
+	public static final String HTS_WAITING_FOR_TEST_COHORT_UUID = "cdee0abe-e471-11eb-8212-7d7156e00a1f";
+	
+	public static final String HTS_WAITING_FOR_TEST_COHORT_NAME = "Waiting For Test";
+	
+	public static final String HTS_POST_TEST_COHORT_UUID = "01af2130-e472-11eb-8212-7d7156e00a1f";
+	
+	public static final String HTS_POST_TEST_COHORT_NAME = "Post-Test Counselling";
 }
