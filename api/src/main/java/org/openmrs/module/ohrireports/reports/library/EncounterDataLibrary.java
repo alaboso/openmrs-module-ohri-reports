@@ -11,6 +11,8 @@ package org.openmrs.module.ohrireports.reports.library;
 
 import org.openmrs.Concept;
 import org.openmrs.api.ConceptService;
+import org.openmrs.api.EncounterService;
+import org.openmrs.module.reporting.cohort.definition.*;
 import org.openmrs.module.reporting.data.encounter.definition.EncounterDataDefinition;
 import org.openmrs.module.reporting.data.encounter.definition.ObsForEncounterDataDefinition;
 import org.openmrs.module.reporting.definition.library.BaseDefinitionLibrary;
@@ -19,11 +21,16 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 
+import static org.openmrs.module.ohrireports.OHRIReportsConstants.*;
+
 @Component
 public class EncounterDataLibrary extends BaseDefinitionLibrary<EncounterDataDefinition> {
 	
 	@Autowired
 	ConceptService conceptService;
+	
+	@Autowired
+	EncounterService encounterService;
 	
 	@Override
 	public Class<? super EncounterDataDefinition> getDefinitionType() {
@@ -56,5 +63,18 @@ public class EncounterDataLibrary extends BaseDefinitionLibrary<EncounterDataDef
 		ofedd.setQuestion(conceptService.getConceptByUuid(conceptUuid));
 		ofedd.setSingleObs(false);
 		return ofedd;
+	}
+	
+	public EncounterWithCodedObsCohortDefinition getHtsEncountersCohort(char c) {
+		EncounterWithCodedObsCohortDefinition ecd = new EncounterWithCodedObsCohortDefinition();
+		ecd.addEncounterType(encounterService.getEncounterTypeByUuid(HTS_ENCOUNTER_TYPE));
+		ecd.addEncounterType(encounterService.getEncounterTypeByUuid(HTS_RETROSPECTIVE_ENCOUNTER_TYPE));
+		ecd.setConcept(conceptService.getConceptByUuid(FINAL_HIV_RESULT));
+		if (c == '+') {
+			ecd.setIncludeCodedValues(Collections.singletonList(conceptService.getConceptByUuid(POSITIVE)));
+		} else if (c == '-') {
+			ecd.setIncludeCodedValues(Collections.singletonList(conceptService.getConceptByUuid(NEGATIVE)));
+		}
+		return ecd;
 	}
 }
