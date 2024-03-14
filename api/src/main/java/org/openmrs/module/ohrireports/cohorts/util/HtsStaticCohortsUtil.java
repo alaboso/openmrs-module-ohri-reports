@@ -27,16 +27,9 @@ public class HtsStaticCohortsUtil {
 		CohortTypeService cohortTypeService = Context.getService(CohortTypeService.class);
 		
 		CohortType existing = cohortTypeService.getByUuid(HTS_COHORT_TYPE_UUID);
-		if (existing != null) {
-			hts.setId(existing.getId());
-			try {
-				Context.evictFromSession(existing);
-			}
-			catch (IllegalArgumentException e) {
-				
-			}
+		if (existing == null) {
+			cohortTypeService.saveCohortType(hts);
 		}
-		cohortTypeService.saveCohortType(hts);
 	}
 	
 	public static void setupHtsCohorts() {
