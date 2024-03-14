@@ -24,6 +24,10 @@ public class OHRIReportsConstants {
 	
 	public final static String HTS_RETROSPECTIVE_ENCOUNTER_TYPE = "79c1f50f-f77d-42e2-ad2a-d29304dde2fe";
 	
+	public final static String TB_PROGRAM_ENROLMENT_ENCOUNTER_TYPE = "9a199b59-b185-485b-b9b3-a9754e65ae57";
+	
+	public final static String TPT_PROGRAM_ENROLMENT_ENCOUNTER_TYPE = "dc6ce80c-83f8-4ace-a638-21df78542551";
+	
 	/**
 	 * Cohort definitions
 	 */
@@ -48,9 +52,13 @@ public class OHRIReportsConstants {
 	public final static String CLIENTS_WITHOUT_COVID_19_OUTCOMES = "db6c4a18-28c6-423c-9da0-58d19e364a7f";
 	
 	public final static String COVID_CLIENTS_WITH_PENDING_LAB_RESULTS = "166aa2b1-ce55-4d16-9643-ca9d2e2694ea";
-
+	
 	public final static String ALL_PATIENTS_COHORT_UUID = "895d0025-84e2-4306-bdd9-66acc150ec21";
-
+	
+	public final static String TB_CLIENTS = "7c1b4906-1caf-4a8e-a51d-7abdbb896805";
+	
+	public final static String TPT_CLIENTS = "5f28254f-0a80-4d15-ad91-68c6cf5ea715";
+	
 	/**
 	 * Associated Concepts
 	 */
@@ -228,5 +236,10 @@ public class OHRIReportsConstants {
 	public final static String COVID19_REPORT_UUID = "ecabd559-14f6-4c65-87af-1254dfdf1304";
 	
 	public final static String COVID19_REPORT_DESIGN_UUID = "4e33bb15-ac1c-4e82-a863-77cb705c6512";
+	
+	/**
+	 * Forms
+	 */
+	public final static String TPT_CASE_ENROLMENT_FORM_UUID = "71080512-07e6-345f-864f-93e892420258";
 	
 }

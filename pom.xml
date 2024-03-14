@@ -115,6 +115,13 @@
 				<version>${cohortVersion}</version>
 				<scope>provided</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>fhir2-api</artifactId>
+				<version>${fhir2Version}</version>
+				<scope>provided</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -158,6 +165,8 @@
         <openmrsPlatformVersion>2.1.1</openmrsPlatformVersion>
 		<reportingVersion>1.19.0</reportingVersion>
 		<cohortVersion>3.0.0-SNAPSHOT</cohortVersion>
+	    <fhir2Version>1.3.0</fhir2Version>
+	    <casereportVersion>2.1-SNAPSHOT</casereportVersion>
 	</properties>
 
 	<distributionManagement>
