@@ -55,7 +55,7 @@ public class OHRIReportsConstants {
 	
 	public final static String ALL_PATIENTS_COHORT_UUID = "895d0025-84e2-4306-bdd9-66acc150ec21";
 	
-	public final static String TB_CLIENTS = "7c1b4906-1caf-4a8e-a51d-7abdbb896805";
+	public final static String TB_CLIENTS = "98fd11ba-cb4d-46f7-9b82-40d49949c7ef";
 	
 	public final static String TPT_CLIENTS = "5f28254f-0a80-4d15-ad91-68c6cf5ea715";
 	
